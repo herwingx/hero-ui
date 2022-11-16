@@ -1,35 +1,101 @@
-
-:root { 
---white: #ffffff; 
---black-1: #202020; 
---primary: #1b90fc; 
---grey: #929292; 
---headline1: 700 2.5rem/normal Roboto Condensed; 
---subtitle1: 700 1.625rem/1.5rem Roboto Condensed; 
---button: 700 0.875rem/1rem Roboto; 
---headline2: 700 1.5rem/normal Roboto Condensed; 
---body1-regular: 400 1rem/1.5rem Roboto; 
---body1-bold: 700 1rem/1.5rem Roboto; 
---body2-bold: 700 0.875rem/1.5rem Roboto; 
---body2-regular: 400 0.875rem/1.5rem Roboto; 
---caption-regular: 400 0.75rem/1.5rem Roboto; 
---caption-bold: 700 0.75rem/1.5rem Roboto; 
- 
+:root {
+  --white: #ffffff;
+  --black-1: #202020;
+  --primary: #1b90fc;
+  --grey: #929292;
+  --headline1: 700 2.5rem / normal Roboto Condensed;
+  --subtitle1: 700 1.625rem/1.5rem Roboto Condensed;
+  --button: 700 0.875rem/1rem Roboto;
+  --headline2: 700 1.5rem / normal Roboto Condensed;
+  --body1-regular: 400 1rem/1.5rem Roboto;
+  --body1-bold: 700 1rem/1.5rem Roboto;
+  --body2-bold: 700 0.875rem/1.5rem Roboto;
+  --body2-regular: 400 0.875rem/1.5rem Roboto;
+  --caption-regular: 400 0.75rem/1.5rem Roboto;
+  --caption-bold: 700 0.75rem/1.5rem Roboto;
 }
 
 body {
   color: var(--primary);
   font: var(--body1-regular);
+  margin: 0;
 }
 
-h1{
+h1,
+p {
+  margin: 0;
+  color: var(--white);
+}
+
+.hero h1 {
   font: var(--headline1);
+  color: var(--white);
+  margin-block-end: 0.5rem;
+  margin-block-start: 1.58rem;
 }
 
-h2{
+.hero p {
+  font: var(--body1-regular);
+  margin-block-end: 1.58rem;
+}
+
+.hero::before {
+  content: "";
+  inline-size: 50%;
+  display: block;
+  block-size: 100%;
+  background-color: var(--black-1);
+  position: absolute;
+  inset-block: 0;
+  z-index: 1;
+  clip-path: polygon(0 0, calc(100% - 151px) 0, 100% 100%, 0 100%);
+}
+
+.hero {
+  position: relative;
+  background-color: var(--black-1);
+  background-image: url("../images/hero.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 128px), 0 100%);
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  block-size: 1080px;
+}
+
+h2 {
   font: var(--headline2);
 }
 
-h3{
+h3 {
   font: var(--button);
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+.wrapper {
+  margin: auto;
+  max-inline-size: 1652px;
+}
+
+button {
+  background: var(--primary);
+  color: var(--white);
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  border: none;
+  cursor: pointer;
+  font: var(--body1-bold);
+  text-transform: uppercase;
+  border-radius: 46px;
+}
+
+.card {
+  max-inline-size: 412px;
+  z-index: 2;
 }
